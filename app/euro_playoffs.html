@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>Euro 2016 Playoffs</title>
+<body>
+
+<p><b>Euro 2016 Playoffs</b> - pick winners of the games (1 for first team listed, 2 for second team listed)</p>
+
+<table style="width:40%">
+    <tr>
+      <td>Switzerland v Poland</td>
+      <td> <input id="g0" name="user" size="5" type="text" value="" /><br /> </td>
+    </tr>
+    <tr>
+      <td>Croatia v Portugal</td>
+      <td> <input id="g1" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>Wales v Northern Ireland</td>
+      <td> <input id="g2" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>Belgium v Hungary</td>
+      <td> <input id="g3" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>Germany v Slovakia</td>
+      <td> <input id="g4" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>Italy v Spain</td>
+      <td> <input id="g5" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>France v Ireland</td>
+      <td> <input id="g6" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+    <tr>
+      <td>England v Iceland</td>
+      <td> <input id="g7" name="user" size="5" type="text" value="" /><br /></td>
+    </tr>
+</table>
+
+<br>
+<input onclick="createQF()" type="submit" value="Confirm" />
+<br />
+<p>
+<div id="qf">
+    </div>
+
+<div id="sf">
+    </div>
+<div id="f">
+      </div>
+<div id="tb">
+      </div>
+      <div id="tb2">
+            </div>
+
+<div id="results">
+  </div>
+<label id = "demo"> </label>
+<script src="sha1.js" charset="utf-8"></script>
+
+<script  src="generate_bracket.js" charset="utf-8">
+</script>
+</body>
+</html>
