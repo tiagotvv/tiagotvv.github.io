@@ -225,7 +225,7 @@ function createChamp()
 function createTieBreak()
 {
   tb = Number(document.getElementById('tie').value);
-
+  var ctrlText = randomString(8);
   var text = winners[0]+','+
   winners[1]+','+
   winners[2]+','+
@@ -241,11 +241,23 @@ function createTieBreak()
   winnersSF[0]+','+
   winnersSF[1]+','+
   winnersF[0]+','+
-  tb;
+  tb+","+ctrlText;
   var hashed = sha1(text);
-  console.log(text);
-  console.log(hashed);
+
+  
   //document.getElementById("results").innerHTML = text + "<p>" + hashed;
 
-  document.getElementById("tb2").innerHTML = "Text = " + text + "<p>" + "Hash = " + hashed;
+  document.getElementById("tb2").innerHTML = "Text = " + text + "<p>" + "Hash = " + hashed + "<p>" + "ControlText = " + ctrlText;
+}
+
+function randomString(n)
+{
+  var allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var text = "";
+  for (var i = 0; i < n; i++)
+  {
+    var idx = Math.floor(Math.random() * allowedChars.length);
+    text += allowedChars.charAt(idx);
+  }
+  return text;
 }
