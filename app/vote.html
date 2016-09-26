@@ -7,6 +7,9 @@
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 <script src="counting_votes.js"> </script>
+<script src="coalitions.js"> </script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 
 <p id="demo"></p>
 
@@ -50,10 +53,20 @@ PAN:   <input id="pan" name="user" size="5" type="text" value="0" />% <br />
 </table>
 <p>
 
+<form>
+      Party Coalitions:<br>
+      <input type="radio" name="coalition" id="none" checked="checked">No Coalitions<br>
+      <input type="radio" name="coalition" id="right">PSD-CDS<br>
+      <input type="radio" name="coalition" id="left">PS-BE<br>
+      <input type="radio" name="coalition" id="both">PSD-CDS and PS-BE
+</form>
+
 <br>
 <input onclick="countVotes()" type="submit" value="Get seat allocation" />
 <br />
 <p>
+
+
 
 
 <label id="results"> </label>

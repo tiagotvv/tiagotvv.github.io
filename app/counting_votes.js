@@ -2,7 +2,7 @@
 // Result from 2015 election
 // key: ["District_Name",[PSD, PS, CDS-PP, BE, PCP-PEV, PAN], total_seats_in_district]
 
-var districts = [["Nacional",[	29.5,	32.38,	9.0,	10.22,	8.27,	1.39], 230],
+var old_districts = [["Nacional",[	29.5,	32.38,	9.0,	10.22,	8.27,	1.39], 230],
 ["Aveiro",[	37.3,	27.9,	10.8,	9.6,	4.4,	1], 16],
 ["Beja",[	15.4,	37.3,	4.7,	8.2,	25,	0.8], 3],
 ["Braga",[	36.2,	30.9,	9.4,	8.8,	5.2,	0.8], 19],
@@ -70,17 +70,55 @@ function sumVotes(votes)
 // Count votes and determine seat allocation in each district
 function countVotes()
 {
+ // check and update coalitions selected with radio-buttons
+  coalition = checkCoalitions();
+  districts = updateVotes(old_districts);
 
   var votes = [];
   var allocation = [0,0,0,0,0,0];
-  votes[0] = Number(document.getElementById('psd').value);
-  votes[1] = Number(document.getElementById('ps').value);
-  votes[2] = Number(document.getElementById('cds').value);
-  votes[3] = Number(document.getElementById('be').value);
-  votes[4] = Number(document.getElementById('pcp').value);
-  votes[5] = Number(document.getElementById('pan').value);
+  if (coalition == 0)
+  {
+      votes[0] = Number(document.getElementById('psd').value);
+      votes[1] = Number(document.getElementById('ps').value);
+      votes[2] = Number(document.getElementById('cds').value);
+      votes[3] = Number(document.getElementById('be').value);
+      votes[4] = Number(document.getElementById('pcp').value);
+      votes[5] = Number(document.getElementById('pan').value);
+      var parties = ["PSD","PS","CDS-PP","BE","PCP-PEV","PAN"];
+  }
+  if (coalition == 1)
+  {
+      votes[0] = Number(document.getElementById('psd').value)+ Number(document.getElementById('cds').value);
+      votes[1] = Number(document.getElementById('ps').value);
+      votes[2] = 0;
+      votes[3] = Number(document.getElementById('be').value);
+      votes[4] = Number(document.getElementById('pcp').value);
+      votes[5] = Number(document.getElementById('pan').value);
+      var parties = ["PSD-CDS","PS","---","BE","PCP-PEV","PAN"];
+  }
+  if (coalition == 2)
+  {
+      votes[0] = Number(document.getElementById('psd').value);
+      votes[1] = Number(document.getElementById('ps').value) + Number(document.getElementById('be').value);;
+      votes[2] = Number(document.getElementById('cds').value);
+      votes[3] = 0;
+      votes[4] = Number(document.getElementById('pcp').value);
+      votes[5] = Number(document.getElementById('pan').value);
+      var parties = ["PSD","PS-BE","CDS-PP","---","PCP-PEV","PAN"];
+  }
+  if (coalition == 3)
+  {
+      votes[0] = Number(document.getElementById('psd').value)+ Number(document.getElementById('cds').value);
+      votes[1] = Number(document.getElementById('ps').value) + Number(document.getElementById('be').value);
+      votes[2] = 0;
+      votes[3] = 0;
+      votes[4] = Number(document.getElementById('pcp').value);
+      votes[5] = Number(document.getElementById('pan').value);
+      var parties = ["PSD-CDS","PS-BE","---","---","PCP-PEV","PAN"];
+  }
+//  console.log(votes)
 
-  var parties = ["PSD","PS","CDS-PP","BE","PCP-PEV","PAN"];
+
   if(sumVotes(votes))
   {
     var text2 = [];
@@ -103,12 +141,42 @@ function countVotes()
     cell5.style.width = '50px';
     cell6.style.width = '50px';
     cell0.innerHTML = "District"
-    cell1.innerHTML = "PSD";
-    cell2.innerHTML = "PS";
-    cell3.innerHTML = "CDS-PP";
-    cell4.innerHTML = "BE";
-    cell5.innerHTML = "PCP-PEV";
-    cell6.innerHTML = "PAN";
+    if (coalition == 0)
+    {
+        cell1.innerHTML = "PSD";
+        cell2.innerHTML = "PS";
+        cell3.innerHTML = "CDS-PP";
+        cell4.innerHTML = "BE";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 1)
+    {
+        cell1.innerHTML = "PSD-CDS";
+        cell2.innerHTML = "PS";
+        cell3.innerHTML = "--";
+        cell4.innerHTML = "BE";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 2)
+    {
+        cell1.innerHTML = "PSD";
+        cell2.innerHTML = "PS-BE";
+        cell3.innerHTML = "CDS-PP";
+        cell4.innerHTML = "--";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 3)
+    {
+        cell1.innerHTML = "PSD-CDS";
+        cell2.innerHTML = "PS-BE";
+        cell3.innerHTML = "--";
+        cell4.innerHTML = "--";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
 
 
     for(var j=1; j < (districts.length);j++)
@@ -141,7 +209,7 @@ function countVotes()
   cell.innerHTML = "<b> TOTAL </b>";
   for (var i=0; i<allocation.length; i++)
   {
-    text += "<li>" + parties[i] + ": " + allocation[i] + "</li> <br>";
+    if(parties[i] != "---") text += "<li>" + parties[i] + ": " + allocation[i] + "</li> <br>";
     cell = row.insertCell(i+1);
     cell.innerHTML = "<b>" + allocation[i] + "</b>";
   }
