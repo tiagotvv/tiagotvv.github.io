@@ -209,7 +209,12 @@ function countVotes()
   cell.innerHTML = "<b> TOTAL </b>";
   for (var i=0; i<allocation.length; i++)
   {
-    if(parties[i] != "---") text += "<li>" + parties[i] + ": " + allocation[i] + "</li> <br>";
+    if(parties[i] != "---")
+    {
+        if(allocation[i] > 115) flag = " (majority)"
+        else flag = " "
+        text += "<li>" + parties[i] + ": " + allocation[i] + flag + "</li> <br>";
+    }
     cell = row.insertCell(i+1);
     cell.innerHTML = "<b>" + allocation[i] + "</b>";
   }
