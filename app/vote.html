@@ -8,7 +8,7 @@
 
 <script src="counting_votes.js"> </script>
 <script src="coalitions.js"> </script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 
 
 <p id="demo"></p>
@@ -25,29 +25,30 @@ PAN:   <input id="pan" name="user" size="5" type="text" value="0" />% <br />
 <p> -->
 
 <div id="gross">
-<table style="width:40%">
+Enter the vote percentage for each party: <br></br>
+<table style="width:40%" id="input">
     <tr>
-      <td>PSD</td>
+      <td valign="middle"><img src="psd.png" width = "40" > </td> <td> PSD</td>
       <td> <input id="psd" name="user" size="5" type="text" value="32.1" />%<br /> </td>
     </tr>
     <tr>
-      <td>PS</td>
+      <td valign="middle"><img src="ps.gif" width = "30" > </td> <td> PS</td>
       <td> <input id="ps" name="user" size="5" type="text" value="36" />%<br /></td>
     </tr>
     <tr>
-      <td>CDS-PP</td>
+      <td valign="middle"><img src="cds.png" width = "30" > </td> <td> CDS-PP</td>
       <td> <input id="cds" name="user" size="5" type="text" value="6.9" />%<br /></td>
     </tr>
     <tr>
-      <td>BE</td>
+      <td valign="middle"><img src="bloco-de-esquerda.jpg" width = "20" > </td> <td> BE</td>
       <td> <input id="be" name="user" size="5" type="text" value="8.9" />%<br /></td>
     </tr>
     <tr>
-      <td>PCP-PEV</td>
+      <td valign="middle"><img src="cdu.png" width = "40" > </td> <td> PCP-PEV </td>
       <td> <input id="pcp" name="user" size="5" type="text" value="8.1" />%<br /></td>
     </tr>
     <tr>
-      <td>PAN</td>
+      <td><img src="pan.jpg" width = "40" > </td> <td> PAN </td>
       <td> <input id="pan" name="user" size="5" type="text" value="1.5" />%<br /></td>
     </tr>
 </table>
@@ -73,6 +74,7 @@ PAN:   <input id="pan" name="user" size="5" type="text" value="0" />% <br />
 </div>
 
 
+
 <div id="detailed">
 <table id="myTable">
 
@@ -88,10 +90,21 @@ th, td {
     padding: 5px;
 }
 
-#mytable {
-    font-size: : 80%;
+#input table {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
+#input td,th {
+    border: 0px solid black;
+    border-collapse: collapse;
+}
+#input td {text-align:center; vertical-align:middle;}
 
+#myTable {
+    font-size: : 80%;
+    font-family: serif;
+}
+#myTable td {text-align:center; vertical-align:middle;}
 
 
 
@@ -102,11 +115,22 @@ th, td {
 
 }
 
+#results {
+
+    width:500px;
+    float:left;
+    font-size: : 80%;
+    font-family: sans-serif;
+
 }
+
+
 #detailed {
   width:500px;
   float:left;
-}
+
+  }
+
 
 </style>
 
