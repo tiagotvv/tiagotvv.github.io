@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Recent polls</h2>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+<script src="counting_votes.js"> </script>
+<script src="coalitions.js"> </script>
+
+<table id="polls">
+    <tr>
+      <td witdth = "100"> Pollster </td>
+      <td witdth = "100"> Date </td>
+      <td valign="middle"><img src="psd.png" width = "30" > </td>
+      <td valign="middle"><img src="cds.png" width = "30" > </td>
+            <td valign="middle"><img src="ps.gif" width = "30" > </td>
+      <td valign="middle"><img src="bloco-de-esquerda.jpg" width = "30" >
+      <td valign="middle"><img src="cdu.png" width = "30" > </td>
+      <td><img src="pan.jpg" width = "30" > </td>
+      <td> OBN(1) </td>
+      <td> Sample Size </td>
+      <td> Poll Weight(2) </td>
+   </tr>
+   <tr>
+     <td colspan="2"> <b> Weighted Average </b> </td>
+     <td> <b>31.3 </td><td><b> 6.0 </td><td><b>37.3</td><td><b> 9.3 </td><td><b>7.5</td><td><b>	1.5</td><td><b>7.1 </td><td colspan="2">n/a</td>
+  </tr>
+  <tr>
+   <td> Aximage </td> <td> 3-Oct-2016 </td>
+   <td> 30.6</td><td> 6.1</td><td> 37.7 </td><td> 8.7 </td><td> 7.5 </td><td> 1.5 </td><td> 7.9 </td>
+   <td> 608 </td> <td> 2.01 </td>
+  </tr>
+  <tr>
+    <td> Eurosondagem </td> <td> 14-Sep-2016 </td>
+    <td> 32.1</td><td> 6.9</td><td> 36.0 </td><td> 8.9 </td><td> 8.1 </td><td> 1.5 </td><td> 6.6 </td>
+    <td> 1009 </td> <td> 1.94 </td>
+  </tr>
+  <tr>
+   <td> Aximage </td> <td> 5-Sep-2016 </td>
+   <td> 30.1</td><td> 4.9</td><td> 39.8 </td><td> 10.6 </td><td> 6.6 </td><td> 1.5 </td><td> 6.8 </td>
+   <td> 603 </td> <td> 1.00 </td>
+  </tr>
+  <tr>
+    <td> Eurosondagem </td> <td> 2-Aug-2016 </td>
+    <td> 32.5</td><td> 6.0</td><td> 35.5 </td><td> 9.7 </td><td> 7.8 </td><td> 1.4 </td><td> 7.1 </td>
+    <td> 1005 </td> <td> 0.65 </td>
+  </tr>
+  <tr>
+   <td> Aximage </td> <td> 17-Jul-2016 </td>
+   <td> 30.5</td><td> 4.9</td><td> 39.0 </td><td> 10.0 </td><td> 6.8 </td><td> 1.5 </td><td> 7.3 </td>
+   <td> 606 </td> <td> 0.50 </td>
+  </tr>
+  <tr>
+    <td> Eurosondagem </td> <td> 6-Jul-2016 </td>
+    <td> 32.5</td><td> 6.5</td><td> 35.0 </td><td> 9.5 </td><td> 8.0 </td><td> 1.6 </td><td> 6.9 </td>
+    <td> 1023 </td> <td> 0.33 </td>
+  </tr>
+<!--  <tr>
+    <td> Eurosondagem </td> <td> 7-Jun-2016 </td>
+    <td> 31.9</td><td> 6.8</td><td> 35.3 </td><td> 9.9 </td><td> 8.1 </td><td> 1.5 </td><td> 6.5 </td>
+    <td> 1025 </td> <td> 0.00 </td>
+</tr> /-->
+</table>
+(1) OBN = other parties, blanks and null votes.
+<br>
+(2) poll weight takes into account how recent the poll is and the number of people interviewed.
+<p>
+    <h2>Seat Allocation Scenarios</h2>
+
+    <table id="scenarios">
+        <tr>
+           <td width = "200"> </td>
+          <td valign="middle"><img src="psd.png" width = "30" > </td>
+          <td valign="middle"><img src="cds.png" width = "30" > </td>
+          <td valign="middle"><img src="ps.gif" width = "30" > </td>
+          <td valign="middle"><img src="bloco-de-esquerda.jpg" width = "30" >
+          <td valign="middle"><img src="cdu.png" width = "30" > </td>
+          <td><img src="pan.jpg" width = "30" > </td>
+          <td> OBN </td>
+       </tr>
+       <tr>
+         <td>Polls Weighted Average </td>
+         <td> <b>31.3 </td><td><b> 6.0 </td><td><b>37.3</td><td><b> 9.3</td><td><b>7.5</td><td><b>	1.5</td><td><b>7.1 </td>
+      </tr>
+      <tr>
+         <td colspan = "8"> Seat allocation according to coalitions </td>
+      </tr>
+      <tr>
+         <td> No coalitions </td>
+        <td> 88</td><td> 7</td><td> 102 </td><td> 17 </td><td> 15 </td><td> 1 </td><td> 0 </td>
+      </tr>
+      <tr>
+        <td> PSD-CDS </td>
+        <td colspan="2"> 101</td><td> 98</td><td> 17 </td><td> 13 </td><td> 1 </td><td> 0 </td>
+      </tr>
+      <tr>
+        <td> PS-BE </td>
+        <td> 83</td><td> 7</td><td colspan="2"> 125(*) </td><td> 14 </td><td> 1 </td><td> 0 </td>
+      </tr>
+      <tr>
+        <td> PSD-CDS and PS-BE </td>
+        <td colspan="2"> 98</td> <td colspan="2"> 120(*)  </td><td> 11 </td><td> 1 </td><td> 0 </td>
+      </tr>
+    </table>
+    (*) absolute majority
+    <p>
+
+        <br>
+        <a href="./vote.html">Go back to simulator</a>
+        <br />
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+
+#polls table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#polls td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#polls td {text-align:center; vertical-align:middle;}
+
+#scenarios {
+    font-size: : 80%;
+    font-family: serif;
+}
+#scenarios td {text-align:center; vertical-align:middle;}
+
+
+
+#gross {
+
+    width:500px;
+    float:left;
+
+}
+
+#results {
+
+    width:600px;
+    float:left;
+    font-size: : 80%;
+    font-family: serif;
+
+}
+
+
+#detailed {
+  width:500px;
+  float:left;
+
+  }
+
+
+</style>
+
+
+</body>
+</html>
