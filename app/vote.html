@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p><b>Simulating the next legislative election in Portugal</b></p>
+<h1>Simulating the next legislative election in Portugal</h1>
 
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
@@ -29,23 +29,23 @@ Enter the vote percentage for each party: <br></br>
 <table style="width:40%" id="input">
     <tr>
       <td valign="middle"><img src="psd.png" width = "40" > </td> <td> PSD</td>
-      <td> <input id="psd" name="user" size="5" type="text" value="32.1" />%<br /> </td>
-    </tr>
-    <tr>
-      <td valign="middle"><img src="ps.gif" width = "30" > </td> <td> PS</td>
-      <td> <input id="ps" name="user" size="5" type="text" value="36" />%<br /></td>
+      <td> <input id="psd" name="user" size="5" type="text" value="31.3" />%<br /> </td>
     </tr>
     <tr>
       <td valign="middle"><img src="cds.png" width = "30" > </td> <td> CDS-PP</td>
-      <td> <input id="cds" name="user" size="5" type="text" value="6.9" />%<br /></td>
+      <td> <input id="cds" name="user" size="5" type="text" value="6.0" />%<br /></td>
+    </tr>
+    <tr>
+      <td valign="middle"><img src="ps.gif" width = "30" > </td> <td> PS</td>
+      <td> <input id="ps" name="user" size="5" type="text" value="37.3" />%<br /></td>
     </tr>
     <tr>
       <td valign="middle"><img src="bloco-de-esquerda.jpg" width = "20" > </td> <td> BE</td>
-      <td> <input id="be" name="user" size="5" type="text" value="8.9" />%<br /></td>
+      <td> <input id="be" name="user" size="5" type="text" value="9.3" />%<br /></td>
     </tr>
     <tr>
       <td valign="middle"><img src="cdu.png" width = "40" > </td> <td> PCP-PEV </td>
-      <td> <input id="pcp" name="user" size="5" type="text" value="8.1" />%<br /></td>
+      <td> <input id="pcp" name="user" size="5" type="text" value="7.5" />%<br /></td>
     </tr>
     <tr>
       <td><img src="pan.jpg" width = "40" > </td> <td> PAN </td>
@@ -64,6 +64,10 @@ Enter the vote percentage for each party: <br></br>
 
 <br>
 <input onclick="countVotes()" type="submit" value="Get seat allocation" />
+<br />
+
+<br>
+<a href="./polls.html">See poll results and current seat distribution projections</a>
 <br />
 <p>
 
@@ -117,10 +121,10 @@ th, td {
 
 #results {
 
-    width:500px;
+    width:600px;
     float:left;
     font-size: : 80%;
-    font-family: sans-serif;
+    font-family: serif;
 
 }
 

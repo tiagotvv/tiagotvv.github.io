@@ -133,6 +133,8 @@ function countVotes()
     var cell4 = row.insertCell(4);
     var cell5 = row.insertCell(5);
     var cell6 = row.insertCell(6);
+//    var cell7 = row.insertCell(7);
+
     cell0.style.width = '150px';
     cell1.style.width = '50px';
     cell2.style.width = '50px';
@@ -140,7 +142,9 @@ function countVotes()
     cell4.style.width = '50px';
     cell5.style.width = '50px';
     cell6.style.width = '50px';
+//    cell7.style.width = '150px';
     cell0.innerHTML = "District"
+//    cell7.innerHTML = "Party with most votes"
     if (coalition == 0)
     {
         cell1.innerHTML = "PSD";
@@ -191,6 +195,7 @@ function countVotes()
       {
         swing[k] = Math.max(districts[j][1][k] + votes[k]-districts[0][1][k],0);
       }
+      var idx = indexOfMax(swing);
       var alloc = dHondt(swing,seats);
       allocation = add(allocation,alloc);
       for (var i=0; i<allocation.length; i++)
@@ -199,6 +204,8 @@ function countVotes()
         cell = row.insertCell(i+1);
         cell.innerHTML = alloc[i];
       }
+//      cell = row.insertCell(i+1);
+//      cell.innerHTML = parties[idx];
 
     }
 
@@ -213,7 +220,7 @@ function countVotes()
     {
         if(allocation[i] > 115) flag = " (majority)"
         else flag = " "
-        text += "<li>" + parties[i] + ": " + allocation[i] + flag + "</li> <br>";
+        text +=  parties[i] + ": " + allocation[i] + flag + "</li> <br>";
     }
     cell = row.insertCell(i+1);
     cell.innerHTML = "<b>" + allocation[i] + "</b>";
@@ -223,8 +230,66 @@ function countVotes()
 
   }
 
+return allocation;
+
 }
 
+/* function predictionTable()
+{
+    text = [];
+    var table_res = document.getElementById("predictionHistory");
+    row = table_res.insertRow(0);
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
+    var cell3 = row.insertCell(3);
+    var cell4 = row.insertCell(4);
+    var cell5 = row.insertCell(5);
+    cell0.innerHTML = "PSD";
+    cell1.innerHTML = "CDS-PP";
+    cell2.innerHTML = "PS";
+    cell3.innerHTML = "BE";
+    cell4.innerHTML = "PCP-PEV";
+    cell5.innerHTML = "PAN";
+    if (coalition == 0)
+    {
+        cell1.innerHTML = "PSD";
+        cell2.innerHTML = "PS";
+        cell3.innerHTML = "CDS-PP";
+        cell4.innerHTML = "BE";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 1)
+    {
+        cell1.innerHTML = "PSD-CDS";
+        cell2.innerHTML = "PS";
+        cell3.innerHTML = "--";
+        cell4.innerHTML = "BE";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 2)
+    {
+        cell1.innerHTML = "PSD";
+        cell2.innerHTML = "PS-BE";
+        cell3.innerHTML = "CDS-PP";
+        cell4.innerHTML = "--";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+    if (coalition == 3)
+    {
+        cell1.innerHTML = "PSD-CDS";
+        cell2.innerHTML = "PS-BE";
+        cell3.innerHTML = "--";
+        cell4.innerHTML = "--";
+        cell5.innerHTML = "PCP-PEV";
+        cell6.innerHTML = "PAN";
+    }
+
+}
+*/
 // Auxiliary Functions
 
 function add(a, b)
