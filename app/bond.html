@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Simulando a compra de uma obrigação</h1>
+
+<script src="bond_calculations.js"> </script>
+
+
+
+<p id="demo"></p>
+
+<!-- <div align="justify">PSD:   <input id="psd" name="user" size="5" type="text" value="0" />%<br />
+PS:    <input id="ps" name="user" size="5" type="text" value="0" />%<br />
+CDS:   <input id="cds" name="user" size="5" type="text" value="0" />% <br />
+BE:    <input id="be" name="user" size="5" type="text" value="0" />% <br />
+PCP:   <input id="pcp" name="user" size="5" type="text" value="0" />% <br />
+PAN:   <input id="pan" name="user" size="5" type="text" value="0" />% <br />
+<br>
+<input onclick="countVotes()" type="submit" value="Get seat allocation" />
+<br />
+<p> -->
+
+<div id="gross">
+Entre com o valores: <br></br>
+<table style="width:70%" id="input">
+    <tr>
+      <td> Valor de Face</td>
+      <td> 100 </td>
+    </tr>
+    <tr>
+      <td> Valor de Compra</td>
+      <td> <input id="buy" name="user" size="8" type="text" value="108.95" /><br /></td>
+    </tr>
+    <tr>
+      <td> Taxa de Juros (% aa)</td>
+      <td> <input id="rate" name="user" size="8" type="text" value="4.125" /><br /></td>
+    </tr>
+    <tr>
+      <td> Prazo (em anos)</td>
+      <td> <input id="dur" name="user" size="8" type="text" value="9" /><br /></td>
+    </tr>
+</table>
+<p>
+
+<br>
+<input onclick="generatePayment()" type="submit" value="Gerar pagamentos anuais" />
+<br />
+
+
+<label id="results"> </label>
+</div>
+
+
+
+<div id="detailed">
+<table id="myTable">
+
+</table>
+</div>
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+
+#input table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#input td,th {
+    border: 0px solid black;
+    border-collapse: collapse;
+}
+#input td {text-align:center; vertical-align:middle;}
+
+#myTable {
+    font-size: : 80%;
+    font-family: serif;
+}
+#myTable td {text-align:center; vertical-align:middle;}
+
+
+
+#gross {
+
+    width:500px;
+    float:left;
+
+}
+
+#results {
+
+    width:600px;
+    float:left;
+    font-size: : 80%;
+    font-family: serif;
+
+}
+
+
+#detailed {
+  width:500px;
+  float:left;
+
+  }
+
+
+</style>
+
+
+
+
+
+
+<br />
+
+<p>
+
+
+
+
+
+</body>
+</html>
