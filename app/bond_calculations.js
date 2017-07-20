@@ -111,7 +111,10 @@ var cell = row.insertCell(1);
     var cell = row.insertCell(2);
     cell.innerHTML = "<b> Juro Efetivo(yield) </b>"
     var cell = row.insertCell(3);
-    var total4 =  ((Math.pow(1+total3/price,1/N)-1)*100).toFixed(2)
+//    var total4 =  ((Math.pow(1+total3/price,1/N)-1)*100).toFixed(2)
+    var total4 = ((total3/price/N) * 100).toFixed(2)
     cell.innerHTML = "<b>" + total4 + "% aa</b>"
+    var det = document.getElementById("results");
+    det.innerHTML = "<p> Obs.:A taxa de juro efetiva assume juros simples <br> Não há capitalização ou reinvestimento dos juros<br>recebidos anualmente."
 
   }
