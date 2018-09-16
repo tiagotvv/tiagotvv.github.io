@@ -193,7 +193,15 @@ function countVotes()
       var seats = districts[j][2];
       for(var k=0; k < votes.length; k++)
       {
-        swing[k] = Math.max(districts[j][1][k] + votes[k]-districts[0][1][k],0);
+        if (votes[k]/districts[0][1][k] < 0.25)
+        {
+            swing[k] = districts[j][1][k]*votes[k]/districts[0][1][k]  ;
+        }
+        else
+        {  
+            swing[k] = Math.max(districts[j][1][k] + votes[k]-districts[0][1][k],
+                districts[j][1][k]*votes[k]/districts[0][1][k]);
+        }
       }
       var idx = indexOfMax(swing);
       var alloc = dHondt(swing,seats);
