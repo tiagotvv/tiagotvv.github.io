@@ -271,6 +271,7 @@ function countVotes()
 
   // Building table with district results
   text = [];
+  text = "Seat Distribution <br> <br>"
   row = table_res.insertRow(districts.length);
   cell = row.insertCell(0);
   cell.innerHTML = "<b> TOTAL </b>";
@@ -290,11 +291,51 @@ var ranks = rank.slice().map(function(v){ return sorted.indexOf(v) });
     {
         if(allocation[j] > 115) flag = "*"
         else flag = " "
-        text +=  parties[j] + ": "  +  (allocation[j]) + " seats" + flag + "</li> <br>";
+        text +=  parties[j] + ": "  +  (allocation[j]) + " " + flag + "</li> <br>";
     }
     cell = row.insertCell(i+1);
     cell.innerHTML = "<b>" + allocation[i] + "</b>";
   }
+  if(allocation[0]+allocation[1] > 115) flag = "*"
+        else flag = " "
+  text +=   " <br> Central Bloc <br> PS+PSD: "  +  (allocation[0]+allocation[1]) + " " + flag + "</li> <br>";
+
+  if(allocation[1]+allocation[3] > 115) flag = "*"
+        else flag = " "
+  text +=   " <br> Left Wing <br> PS+BE: "  +  (allocation[1]+allocation[3]) + " " + flag + "</li> <br>";
+
+  if(allocation[1]+allocation[4] > 115) flag = "*"
+        else flag = " "
+  text +=   "PS+CDU: "  +  (allocation[1]+allocation[4]) + " " + flag + "</li> <br>";
+
+  if(allocation[1]+allocation[5] > 115) flag = "*"
+        else flag = " "
+  text +=   "PS+PAN: "  +  (allocation[1]+allocation[5]) + " " + flag + "</li> <br>";
+ 
+  if(allocation[1]+allocation[6] > 115) flag = "*"
+  else flag = " "
+  text +=   "PS+LIVRE: "  +  (allocation[1]+allocation[6]) + " " + flag + "</li> <br>";
+
+  if(allocation[1]+allocation[3]+allocation[4] > 115) flag = "*"
+        else flag = " "
+  text +=   "PS+BE+CDU: "  +  (allocation[1]+allocation[3]+allocation[4]) + " " + flag + "</li> <br>";
+
+  if(allocation[1]+allocation[3]+allocation[4]+allocation[5]+allocation[6] > 115) flag = "*"
+  else flag = " "
+text +=   "All Left: "  +  (allocation[1]+allocation[3]+allocation[4]+allocation[5]+allocation[6]) + " " + flag + "</li> <br>";
+
+  if(allocation[0]+allocation[2] > 115) flag = "*"
+        else flag = " "
+  text +=   " <br> Right Wing <br> PSD+CDS: "  +  (allocation[0]+allocation[2]) + " " + flag + "</li> <br>";
+  
+  if(allocation[0]+allocation[2]+allocation[7] > 115) flag = "*"
+  else flag = " "
+  text +=   "PSD+CDS+ALI: "  +  (allocation[0]+allocation[2]+allocation[7]) + " " + flag + "</li> <br>";
+  
+  if(allocation[0]+allocation[2]+allocation[7]+allocation[8]+allocation[9] > 115) flag = "*"
+  else flag = " "
+  text +=   "All Right: "  +  (allocation[0]+allocation[2]+allocation[7]+allocation[8]+allocation[9]) + " " + flag + "</li> <br> <br> <br>";
+  text +=   "* = absolute majority <br>";
     document.getElementById("results").innerHTML = text;
 
 
