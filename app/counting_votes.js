@@ -6,6 +6,31 @@
 
 // Sep 23: updated number of MPs elected per electoral circle.
 
+old_districts = [["Nacional",[27.760,	36.336,	4.223,	9.522,	6.332,	3.323,	1.089,	1.289,	1.292], 230],
+["Aveiro",[	33.55	,	34.31	,	5.69	,	9.96	,	3.05	,	2.96	,	0.68	,	1.02	,	0.74], 16],
+["Beja",[	13.29	,	40.71	,	2.30	,	9.08	,	22.80	,	1.97	,	0.62	,	0.43	,	2.04], 3],
+["Braga",[	34.08	,	36.40	,	4.11	,	8.88	,	3.96	,	2.56	,	0.68	,	0.82	,	0.68], 19],
+["Braganca",[	40.78	,	36.54	,	4.46	,	6.03	,	2.12	,	1.31	,	0.42	,	0.43	,	0.84], 3],
+["Castelo Branco",[	26.33	,	40.88	,	3.71	,	11.05	,	4.75	,	2.38	,	0.89	,	0.58	,	1.27] , 4],
+["Coimbra",[	26.61	,	39.02	,	3.48	,	11.18	,	5.59	,	2.63	,	0.94	,	0.82	,	0.90], 9],
+["Evora",[	17.48	,	38.33	,	3.42	,	8.95	,	18.89	,	1.95	,	0.68	,	0.66	,	2.22], 3],
+["Faro",[	22.30	,	36.75	,	3.81	,	12.31	,	7.05	,	4.77	,	0.99	,	0.82	,	2.14], 9],
+["Guarda",[		34.37	,	37.55	,	4.99	,	7.81	,	2.99	,	1.60	,	0.49	,	0.60	,	1.48], 3],
+["Leiria",[	33.52	,	31.07	,	5.32	,	9.36	,	4.26	,	2.87	,	0.92	,	0.92	,	1.49], 10],
+["Lisboa",[	22.60	,	36.74	,	4.40	,	9.71	,	7.79	,	4.41	,	2.07	,	2.47	,	2.00], 48],
+["Portalegre",[		20.11	,	44.60	,	3.80	,	8.07	,	10.62	,	1.66	,	0.56	,	0.49	,	2.73], 2],
+["Porto",[		31.16	,	36.65	,	3.34	,	10.12	,	4.80	,	3.46	,	0.96	,	1.52	,	0.61], 40],
+["Santarem",[	25.20	,	37.13	,	4.73	,	10.22	,	7.57	,	2.59	,	0.86	,	0.78	,	2.03], 9],
+["Setubal",[	14.39	,	38.58	,	2.96	,	12.11	,	15.75	,	4.44	,	1.23	,	1.05	,	1.93], 18],
+["Viana do Castelo",[	33.79	,	34.77	,	6.21	,	8.47	,	3.97	,	2.36	,	0.56	,	0.57	,	0.70], 6],
+["Vila Real",[	39.04	,	37.21	,	4.50	,	6.06	,	2.51	,	1.65	,	0.55	,	0.42	,	0.79], 5],
+["Viseu",[	36.24	,	35.37	,	5.89	,	7.86	,	2.30	,	2.13	,	0.49	,	0.55	,	0.97], 8],
+["Acores",[30.21	,	40.06	,	4.80	,	7.97	,	2.45	,	2.65	,	0.85	,	0.68	,	0.85], 5],
+["Madeira",[37.15	,	33.41	,	6.05	,	5.24	,	2.08	,	1.82	,	0.37	,	0.71	,	0.70], 6],
+["zExterior - Europa",[	18.77	,	29.06	,	2.95	,	5.66	,	2.51	,	4.91	,	1.08	,	0.81	,	0.85], 2],
+["zExterior - Fora Europa",[33.39	,	20.19	,	4.25	,	2.79	,	1.03	,	4.68	,	0.69	,	2.51	,	0.92], 2]];
+
+/*
 var old_districts = [["Nacional",[	31,	32.38,	7.57,	10.22,	8.27,	1.39, 0.72, 1.86, 0.88, 1.49], 230],
 ["Aveiro",[	37.3,	27.9,	10.8,	9.6,	4.4,	1, 0.45, 1.38, 0.75, 0.97], 16],
 ["Beja",[	15.4,	37.3,	4.7,	8.2,	25,	0.8, 0.36, 0.97, 0.32, 1.96], 3],
@@ -29,6 +54,7 @@ var old_districts = [["Nacional",[	31,	32.38,	7.57,	10.22,	8.27,	1.39, 0.72, 1.8
 ["Madeira",[	37.8,	20.9,	6.0,	10.7,	3.6,	1.8, 1.01, 1.62, 1.00, 1.34], 6],
 ["Abroad - Europe",[	33.0,	29.9,	6.1,	5.8,	5.9,	0.9, 1.82, 2.07, 2.63, 0.65], 2],
 ["Abroad - Rest of the world",[45.1,	10.8,	3.4,	1.6,	1.5,	1.8, 0.56, 2.29, 1.95, 0.96], 2]];
+*/
 
 // d'Hondt method for seat allocation
 function dHondt(votes, seats)
@@ -79,7 +105,7 @@ function countVotes()
   districts = updateVotes(old_districts);
 
   var votes = [];
-  var allocation = [0,0,0,0,0,0,0,0,0,0];
+  var allocation = [0,0,0,0,0,0,0,0,0];
   if (coalition == 0)
   {
       votes[0] = Number(document.getElementById('psd').value);
@@ -89,12 +115,12 @@ function countVotes()
       votes[4] = Number(document.getElementById('pcp').value);
       votes[5] = Number(document.getElementById('pan').value);
       votes[6] = Number(document.getElementById('liv').value);
-      votes[7] = Number(document.getElementById('ali').value);
-      votes[8] = Number(document.getElementById('il').value);
-      votes[9] = Number(document.getElementById('che').value);
+     //votes[7] = Number(document.getElementById('ali').value);
+      votes[7] = Number(document.getElementById('il').value);
+      votes[8] = Number(document.getElementById('che').value);
 
 
-      var parties = ["PSD","PS","CDS-PP","BE","PCP-PEV","PAN", "LIVRE", "Aliança", "IL", "Chega"];
+      var parties = ["PSD","PS","CDS-PP","BE","CDU","PAN", "LIVRE", "IL", "Chega"];
   }
   if (coalition == 1)
   {
@@ -105,11 +131,11 @@ function countVotes()
       votes[4] = Number(document.getElementById('pcp').value);
       votes[5] = Number(document.getElementById('pan').value);
       votes[6] = Number(document.getElementById('liv').value);
-      votes[7] = Number(document.getElementById('ali').value);
-      votes[8] = Number(document.getElementById('il').value);
-      votes[9] = Number(document.getElementById('che').value);
+      //votes[7] = Number(document.getElementById('ali').value);
+      votes[7] = Number(document.getElementById('il').value);
+      votes[8] = Number(document.getElementById('che').value);
 
-      var parties = ["PSD-CDS","PS","---","BE","PCP-PEV","PAN", "LIVRE", "Aliança", "IL", "Chega"];
+      var parties = ["PSD-CDS","PS","---","BE","CDU","PAN", "LIVRE", "Aliança", "IL", "Chega"];
   }
   if (coalition == 2)
   {
@@ -120,11 +146,11 @@ function countVotes()
       votes[4] = Number(document.getElementById('pcp').value);
       votes[5] = Number(document.getElementById('pan').value);
       votes[6] = Number(document.getElementById('liv').value);
-      votes[7] = Number(document.getElementById('ali').value);
-      votes[8] = Number(document.getElementById('il').value);
-      votes[9] = Number(document.getElementById('che').value);
+      //votes[7] = Number(document.getElementById('ali').value);
+      votes[7] = Number(document.getElementById('il').value);
+      votes[8] = Number(document.getElementById('che').value);
 
-      var parties = ["PSD","PS-BE","CDS-PP","---","PCP-PEV","PAN", "LIVRE", "Aliança", "IL", "Chega"];
+      var parties = ["PSD","PS-BE","CDS-PP","---","CDU","PAN", "LIVRE", "Aliança", "IL", "Chega"];
   }
   if (coalition == 3)
   {
@@ -135,11 +161,11 @@ function countVotes()
       votes[4] = Number(document.getElementById('pcp').value);
       votes[5] = Number(document.getElementById('pan').value);
       votes[6] = Number(document.getElementById('liv').value);
-      votes[7] = Number(document.getElementById('ali').value);
-      votes[8] = Number(document.getElementById('il').value);
-      votes[9] = Number(document.getElementById('che').value);
+     // votes[7] = Number(document.getElementById('ali').value);
+      votes[7] = Number(document.getElementById('il').value);
+      votes[8] = Number(document.getElementById('che').value);
 
-      var parties = ["PSD-CDS","PS-BE","---","---","PCP-PEV","PAN", "LIVRE", "Aliança", "IL", "Chega"];
+      var parties = ["PSD-CDS","PS-BE","---","---","CDU","PAN", "LIVRE", "Aliança", "IL", "Chega"];
   }
 //  console.log(votes)
 
@@ -161,7 +187,7 @@ function countVotes()
     var cell7 = row.insertCell(7);
     var cell8 = row.insertCell(8);
     var cell9 = row.insertCell(9);
-    var cell10 = row.insertCell(10);
+    //var cell10 = row.insertCell(10);
 
 //    var cell7 = row.insertCell(7);
 
@@ -175,7 +201,7 @@ function countVotes()
     cell7.style.width = '50px';
     cell8.style.width = '50px';
     cell9.style.width = '50px';
-    cell10.style.width = '50px';
+    //cell10.style.width = '50px';
 
   
 //    cell7.style.width = '150px';
@@ -187,12 +213,12 @@ function countVotes()
         cell2.innerHTML = "PS";
         cell3.innerHTML = "CDS-PP";
         cell4.innerHTML = "BE";
-        cell5.innerHTML = "PCP-PEV";
+        cell5.innerHTML = "CDU";
         cell6.innerHTML = "PAN";
         cell7.innerHTML = "LIVRE";
-        cell8.innerHTML = "ALI";
-        cell9.innerHTML = "IL";
-        cell10.innerHTML = "CHE";
+        //cell8.innerHTML = "ALI";
+        cell8.innerHTML = "IL";
+        cell9.innerHTML = "CH";
     }
     if (coalition == 1)
     {
@@ -200,12 +226,12 @@ function countVotes()
         cell2.innerHTML = "PS";
         cell3.innerHTML = "--";
         cell4.innerHTML = "BE";
-        cell5.innerHTML = "PCP-PEV";
+        cell5.innerHTML = "CDU";
         cell6.innerHTML = "PAN";
         cell7.innerHTML = "LIVRE";
-        cell8.innerHTML = "ALI";
-        cell9.innerHTML = "IL";
-        cell10.innerHTML = "CHE";
+       // cell8.innerHTML = "ALI";
+        cell8.innerHTML = "IL";
+        cell9.innerHTML = "CH";
     }
     if (coalition == 2)
     {
@@ -213,12 +239,12 @@ function countVotes()
         cell2.innerHTML = "PS-BE";
         cell3.innerHTML = "CDS-PP";
         cell4.innerHTML = "--";
-        cell5.innerHTML = "PCP-PEV";
+        cell5.innerHTML = "CDU";
         cell6.innerHTML = "PAN";
         cell7.innerHTML = "LIVRE";
-        cell8.innerHTML = "ALI";
-        cell9.innerHTML = "IL";
-        cell10.innerHTML = "CHE";
+       // cell8.innerHTML = "ALI";
+        cell8.innerHTML = "IL";
+        cell9.innerHTML = "CH";
     }
     if (coalition == 3)
     {
@@ -226,12 +252,12 @@ function countVotes()
         cell2.innerHTML = "PS-BE";
         cell3.innerHTML = "--";
         cell4.innerHTML = "--";
-        cell5.innerHTML = "PCP-PEV";
+        cell5.innerHTML = "CDU";
         cell6.innerHTML = "PAN";
         cell7.innerHTML = "LIVRE";
-        cell8.innerHTML = "ALI";
-        cell9.innerHTML = "IL";
-        cell10.innerHTML = "CHE";
+       // cell8.innerHTML = "ALI";
+        cell8.innerHTML = "IL";
+        cell9.innerHTML = "CH";
     }
 
 
@@ -276,7 +302,7 @@ function countVotes()
   cell = row.insertCell(0);
   cell.innerHTML = "<b> TOTAL </b>";
 
-  var rank = [0,0,0,0,0,0,0,0,0,0];
+  var rank = [0,0,0,0,0,0,0,0,0];
   for (var i=0; i<allocation.length; i++)
   {
     rank[i] = allocation[i] + i/100
@@ -330,11 +356,15 @@ text +=   "All Left: "  +  (allocation[1]+allocation[3]+allocation[4]+allocation
   
   if(allocation[0]+allocation[2]+allocation[7] > 115) flag = "*"
   else flag = " "
-  text +=   "PSD+CDS+ALI: "  +  (allocation[0]+allocation[2]+allocation[7]) + " " + flag + "</li> <br>";
+  text +=   "PSD+CDS+IL: "  +  (allocation[0]+allocation[2]+allocation[7]) + " " + flag + "</li> <br>";
   
-  if(allocation[0]+allocation[2]+allocation[7]+allocation[8]+allocation[9] > 115) flag = "*"
+  if(allocation[0]+allocation[2]+allocation[8] > 115) flag = "*"
   else flag = " "
-  text +=   "All Right: "  +  (allocation[0]+allocation[2]+allocation[7]+allocation[8]+allocation[9]) + " " + flag + "</li> <br> <br> <br>";
+  text +=   "PSD+CDS+CH: "  +  (allocation[0]+allocation[2]+allocation[8]) + " " + flag + "</li> <br>";
+
+  if(allocation[0]+allocation[2]+allocation[7]+allocation[8] > 115) flag = "*"
+  else flag = " "
+  text +=   "Center+Right: "  +  (allocation[0]+allocation[2]+allocation[7]+allocation[8]) + " " + flag + "</li> <br> <br> <br>";
   text +=   "* = absolute majority <br>";
     document.getElementById("results").innerHTML = text;
 
