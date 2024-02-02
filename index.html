@@ -1,82 +1,160 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="Your description goes here" />
-	<meta name="keywords" content="your,keywords,goes,here" />
-	<meta name="author" content="Your Name" />
-	<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" type="text/css" href="origo.css" title="Origo" media="all" />
-	<title>Tiago Travassos Vieira Vinhoza</title>
+
+    <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+        * {
+            box-sizing: border-box;
+        }
+
+        .left-pane {
+            width: 20%;
+            height: 100%;
+            float: left;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        .right-pane {
+            width: 80%;
+            height: 100%;
+            float: left;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu li a {
+            display: block;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .profile {
+      display: flex;
+      align-items: center;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .profile-title {
+      font-size: 18px;
+      color: #666;
+    }
+    .profile-bio {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .iico {
+    width: 30px;
+    height: 30px;
+}
+    .section {
+      margin-top: 20px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .section-content {
+      font-size: 16px;
+    }
+
+        .menu li a:hover {
+            background-color: #cccccc;
+        }
+
+        .content {
+            min-height: 500px;
+        }
+    </style>
 </head>
+<body>
+    <div class="left-pane">
+        <h1>Tiago Vinhoza</h1>
+        <p>Welcome to my homepage!</p>
+        <ul class="menu">
+            <li><a href="./index.html" onclick="loadContent('about.html')">Home</a></li>
+            <li><a href="./about.html" onclick="loadContent('about.html')">About Me</a></li>
+            <li><a href="./projects.html" onclick="loadContent('projects.html')">Projects</a></li>
+            <li><a href="./academic_career.html" onclick="loadContent('publications.html')">Career in Academia</a></li>
+        </ul>
+    </div>
+    <div class="right-pane">
+        <div class="content" id="content">
+            <h2>Home</h2>
+            <div class="profile">
+                <img src="./images/profile.jpg" alt="Profile Image" class="profile-image">
+                <div class="profile-info">
+                  <div class="profile-name">Tiago Vinhoza</div>
+                  <div class="profile-title">Data Scientist - Machine Learning, Data Mining, Statistics</div>
+                  <div class="profile-bio">  <p>I am a data scientist and researcher with a PhD in Electrical Engineering and over 10 years of experience in applying machine learning, signal processing, statistics, and data analysis/visualization techniques to various domains, such as healthcare and wireless communications. I have a track record of delivering solutions and results in challenging and complex projects, both individually and as a team members.
+                    I have experience working with a multidisciplinary team (people from electrical engineering to computer and medical sciences) and with researchers from top universities (Carnegie Mellon, MIT).
+                        <p></div>
+                </div>
+             </div>
+                   <div class="section-title">Skills</div>
+                <div class="section-content">I have expertise in the following areas:</div>
+                <ul class="section-content">
+                    
+                    <li>Exploratory data analysis and hypothesis testing</li>
+                    <li>Supervised and unsupervised machine learning</li>
+                    <li>Deep learning and natural language processing</li>
+                    <li>Time-series analysis</li>
+                    <li>Statistical Signal Processing, Probabilistic Models, Linear Algebra</li>
+                    <li>Data visualization and dashboard development (Tableau Public, Microsoft PowerBI, and Streamlit)</li>
+                    <li>Programming Languages: Python, R, Juila, SQL</li>
+                    <li>Scikit-learn, Keras,  and other frameworks and libraries</li>
+                    <li>Tools to explain black-box machine learning models predictions (Shapley values, LIME, Rule Fit,
+                        Surrogate Models).</li>
+                </ul>
+                <a href="https://github.com/tiagotvv"><img src="./images/github.svg" class="iico"/></a>
+                <a href="https://www.linkedin.com/in/tiago-vinhoza/"><img src="./images/linkedin.svg" class="iico" /></a>
+                <a href="https://twitter.com/tiagotvv"><img src="./images/twitter.svg" class="iico"/></a>
+                <p></p><img src="./images/email.svg" class="iico" /> tiago.vinhoza[at]gmail.com
 
-<body class="light blue smaller freestyle01">
-<div id="layout">
 
-	<div class="row smaller">
-		<div class="col c6 smaller">
-			<h1><a href="index.html">TIAGO TRAVASSOS VIEIRA VINHOZA</a></h1>
-		</div>
-
-		<div class="col c6 aligncenter">
-			<p class="slogan"></p>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col c12 aligncenter">
-			<img src="images/front.jpg" width="960" height="240" alt="" />
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col c2 alignleft">
-			<ul class="menu">
-
-
-
-		<li><a class="current" href="index.html">Home</a></li>
-		<li><a href="aboutme.html">About Me</a></li>
-		<li><a href="teaching.html">Teaching</a>
-				<li><a href="#">Research</a>
-					<ul class="subpages">
-				<li><a href="publications.html">Publications</a></li>
-				<li><a href="students.html">Students</a></li>
-				<li><a href="collaborators.html">Collaborators</a></li>
-				<li><a href="technicalservice.html">Technical Service</a></li>
-				<li><a href="cfps.html">Call for Papers</a></li>
-					</ul>
-				</li>
-				<li><a href="links.html">Links</a></li>
-
-			</ul>
-		</div>
-
-<div class="col c10">
-				<address><b> </b></address>
-<address><b> </address>
-<address> </address>
-<address> </address>
-
-<address>
-
-<address><b>Email: tiago.vinhoza(at)gmail.com</b><br></address>
-
-<p>
-<a href="http://tiagotvv.github.io/CV_TiagoVinhoza.pdf">Resume (PDF)</a><br />
-<p>
-<a href="http://www.linkedin.com/pub/tiago-vinhoza/">Linkedin Profile</a>
-<p>
-<br />
-<!-- <a href="http://paginas.fe.up.pt/~vinhoza/index_pt.html">Esta página em Português</a><br /> \!-->
-<br />
-	<div id="footer" class="row">
-		<div class="col c12 aligncenter">
-			<h3>&copy; 2016 Tiago T. V. Vinhoza</h3>
-			<p><a href="http://andreasviklund.com/templates/origo/">Template design</a> by <a href="http://andreasviklund.com/">Andreas Viklund</a><br />
-		Best hosted at <a href="https://www.svenskadomaner.se/?ref=mall&amp;ling=en" title="Svenska Domäner AB">www.svenskadomaner.se</a></p>
-		</div>
-	</div>
- </div>
+        </div>
+    </div>
+    <script>
+        function loadContent(url) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("content").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
 </body>
 </html>
+
+
+<html>
+
