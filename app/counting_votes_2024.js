@@ -288,7 +288,7 @@ function countVotes()
     {
       row = table_res.insertRow(j);
       var cell = row.insertCell(0);
-      cell.innerHTML = districts[j][0];
+      cell.innerHTML = districts[j][0] + " (" + districts[j][2] + ")";
       var swing = [];
       var text3 = districts[j][0] + " - ";
       var seats = districts[j][2];
@@ -323,7 +323,7 @@ function countVotes()
   text = "Seat Distribution <br> <br>"
   row = table_res.insertRow(districts.length);
   cell = row.insertCell(0);
-  cell.innerHTML = "<b> TOTAL </b>";
+  cell.innerHTML = "<b>" + "TOTAL"  + " (" + districts[0][2] + ") </b>";
 
   var rank = [0,0,0,0,0,0,0,0,0];
   for (var i=0; i<allocation.length; i++)
