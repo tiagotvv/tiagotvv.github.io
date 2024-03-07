@@ -363,11 +363,11 @@ var ranks = rank.slice().map(function(v){ return sorted.indexOf(v) });
  
   if(allocation[1]+allocation[5] > 115) flag = "*"
   else flag = " "
-  text +=   "PS+LIVRE: "  +  (allocation[1]+allocation[5]) + " " + flag + "</li> <br>";
+  text +=   "PS+L: "  +  (allocation[1]+allocation[5]) + " " + flag + "</li> <br>";
 
   if(allocation[1]+allocation[5] > 115) flag = "*"
   else flag = " "
-  text +=   "PS+BE+LIVRE: "  +  (allocation[1]+allocation[2]+allocation[5]) + " " + flag + "</li> <br>";
+  text +=   "PS+BE+L: "  +  (allocation[1]+allocation[2]+allocation[5]) + " " + flag + "</li> <br>";
 
   if(allocation[1]+allocation[2]+allocation[3] > 115) flag = "*"
         else flag = " "
